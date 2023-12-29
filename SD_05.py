@@ -24,3 +24,7 @@ def scrape_product_info(url):
 
                 writer.writerow([name, price, rating])
         
+        print("Product information extracted and stored in 'products_info.csv'.")
+    else:
+        print("Failed to fetch the page. Status code:", response.status_code)
+
