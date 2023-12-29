@@ -23,5 +23,8 @@ def scrape_amazon_products(url):
 
                 writer.writerow([name, price, rating])
         
+        print("Product information extracted and stored in 'amazon_products.csv'.")
+    else:
+        print("Failed to fetch the page. Status code:", response.status_code)
 
    
