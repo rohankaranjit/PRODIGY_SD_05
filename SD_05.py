@@ -15,3 +15,12 @@ def scrape_product_info(url):
         with open('products_info.csv', 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["Product Name", "Price", "Rating"])
+
+            products = soup.find_all("div", class_="product-item")
+            for product in products:
+                name = product.find("h2", class_="product-name").text.strip()
+                price = product.find("span", class_="product-price").text.strip()
+                rating = product.find("div", class_="product-rating").text.strip()
+
+                writer.writerow([name, price, rating])
+        
