@@ -28,3 +28,9 @@ def scrape_product_info(url):
     else:
         print("Failed to fetch the page. Status code:", response.status_code)
 
+# Replace this URL with the actual e-commerce site you want to scrape
+ecommerce_url = "https://example.com/products"  # Replace with the actual URL
+
+scrape_product_info(ecommerce_url)
+
+
