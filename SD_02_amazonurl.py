@@ -15,4 +15,13 @@ def scrape_amazon_products(url):
             writer = csv.writer(file)
             writer.writerow(["Product Name", "Price", "Rating"])
 
+            products = soup.find_all("div", class_="a-section a-spacing-none p13n-asin")
+            for product in products:
+                name = product.find("span", class_="zg-text-center-align").text.strip()
+                price = product.find("span", class_="p13n-sc-price").text.strip()
+                rating = product.find("span", class_="a-icon-alt").text.strip()
+
+                writer.writerow([name, price, rating])
+        
+
    
