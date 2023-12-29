@@ -10,3 +10,8 @@ def scrape_product_info(url):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
+
+
+        with open('products_info.csv', 'w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Product Name", "Price", "Rating"])
