@@ -27,4 +27,7 @@ def scrape_amazon_products(url):
     else:
         print("Failed to fetch the page. Status code:", response.status_code)
 
-   
+   # Amazon Best Sellers in Electronics URL
+amazon_url = "https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics"
+
+scrape_amazon_products(amazon_url)
