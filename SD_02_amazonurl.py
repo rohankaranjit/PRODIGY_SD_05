@@ -11,3 +11,8 @@ def scrape_amazon_products(url):
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
 
+    with open('amazon_products.csv', 'w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Product Name", "Price", "Rating"])
+
+   
